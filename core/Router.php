@@ -83,7 +83,7 @@ class Router
 
     //     return false;
     // }
-    public function ma9($url){
+    public function __match($url){
         foreach ($this->routes as $route => $params){
             if (preg_match($route, $url, $matches)) {
                 // Get named capture group values
@@ -122,7 +122,7 @@ class Router
     {
         $url = $this->removeQueryStringVariables($url);
 
-        if ($this->ma9($url)) {
+        if ($this->__match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
             $controller = $this->getNamespace() . $controller;
