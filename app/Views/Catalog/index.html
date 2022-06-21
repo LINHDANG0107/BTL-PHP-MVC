@@ -1,0 +1,4 @@
+{% extends "base.html" %} {% block title %}Catalog{% endblock %} {% block body %}
+
+<h1>catalog</h1>
+{%for p in product %} {{p.name}} {{p.pic}} {{p.price}} {{p.id}} {% endfor%} {% endblock %}

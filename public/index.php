@@ -3,7 +3,7 @@
 /**
  * Front controller
  *
- * PHP version 7.0
+ * PHP version 8.0
  */
 
 /**
@@ -30,5 +30,4 @@ $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
     
 $router->dispatch($_SERVER['QUERY_STRING']);
-echo "vl"
 ?>

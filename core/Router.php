@@ -5,7 +5,7 @@ namespace Core;
 /**
  * Router
  *
- * PHP version 7.0
+ * PHP version 8.0
  */
 class Router
 {
@@ -65,31 +65,14 @@ class Router
      *
      * @return boolean  true if a match found, false otherwise
      */
-    // public function match($url)
-    // {
-    //     foreach ($this->routes as $route => $params) {
-    //         if (preg_match($route, $url, $matches)) {
-    //             // Get named capture group values
-    //             foreach ($matches as $key => $match) {
-    //                 if (is_string($key)) {
-    //                     $params[$key] = $match;
-    //                 }
-    //             }
-
-    //             $this->params = $params;
-    //             return true;
-    //         }
-    //     }
-
-    //     return false;
-    // }
-    public function __match($url){
+  
+    public function matching($url){
         foreach ($this->routes as $route => $params){
             if (preg_match($route, $url, $matches)) {
                 // Get named capture group values
-                foreach ($matches as $key => $match) {
+                foreach ($matches as $key => $matching) {
                     if (is_string($key)) {
-                        $params[$key] = $match;
+                        $params[$key] = $matching;
                     }
                 }
 
@@ -109,7 +92,7 @@ class Router
     {
         return $this->params;
     }
-
+    
     /**
      * Dispatch the route, creating the controller object and running the
      * action method
@@ -122,7 +105,7 @@ class Router
     {
         $url = $this->removeQueryStringVariables($url);
 
-        if ($this->__match($url)) {
+        if ($this->matching($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
             $controller = $this->getNamespace() . $controller;
