@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-CA">
    <head>
-      <title>3tmobile</title>
+      <title>web</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -40,7 +40,7 @@
          <div class="info_top">
             <div class="bg_in">
                <p class="p_infor">
-                  <span><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: sales@3tmobile.gmail</span>
+                  <span><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: sales@web.gmail</span>
                   <span><i class="fa fa-phone" aria-hidden="true"></i> Hotline: 0923-032-992</span>
                </p>
             </div>
@@ -551,7 +551,7 @@
                            <ul class="contact-list">
                               <li class="addr">
                                  <strong class="title">Địa chỉ của chúng tôi</strong>
-                                 <p><em><strong>3tmobile</strong></em><br />
+                                 <p><em><strong>web</strong></em><br />
                                  <p>Trung Tâm Bán Hàng:</p>
                                  <p>CN1: 333B Minh Phụng, Phường 2, Quận 11, HCM</p>
                                  <p>CN2: 548 Lý Thái Tổ, Phường 10, Quận 10, HCM</p>
@@ -563,7 +563,7 @@
                            </ul>
                            <div class="hiring-box">
                               <strong class="title">Chào bạn!</strong>
-                              <p>Mọi thắc mắc bạn hãy gửi về mail của chúng tôi <strong>3tmobile@webextrasite.com</strong> chúng tôi sẽ giải đáp cho bạn.</p>
+                              <p>Mọi thắc mắc bạn hãy gửi về mail của chúng tôi <strong>web@webextrasite.com</strong> chúng tôi sẽ giải đáp cho bạn.</p>
                               <p><a href="." class="arrow-link"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Về trang chủ</a></p>
                            </div>
                         </div>

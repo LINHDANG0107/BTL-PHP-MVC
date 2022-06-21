@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-CA">
    <head>
-      <title>3tmobile</title>
+      <title>web</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -44,7 +44,7 @@
          <div class="info_top">
             <div class="bg_in">
                <p class="p_infor">
-                  <span><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: sales@3tmobile.gmail</span>
+                  <span><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: sales@web.gmail</span>
                   <span><i class="fa fa-phone" aria-hidden="true"></i> Hotline: 0923-032-992</span>
                </p>
             </div>
@@ -357,7 +357,7 @@
       <script defer src="js/jquery.scrollto.js"></script>
       <script defer type="text/javascript">
          function giohang(id) {
-            window.open('http://localhost/3tmobile/giohang.php');
+            window.open('http://localhost/web/giohang.php');
              // document.getElementById("khungnen").style.display = "block";
          
              // document.getElementById("loadding").style.display = "block";
@@ -400,7 +400,7 @@
          
              //             if (isConfirm) {
          
-             //                 window.location = 'http://localhost/3tmobile/giohang.php';
+             //                 window.location = 'http://localhost/web/giohang.php';
          
              //             } else {
          
