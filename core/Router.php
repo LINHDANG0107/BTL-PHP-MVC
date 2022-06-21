@@ -65,9 +65,26 @@ class Router
      *
      * @return boolean  true if a match found, false otherwise
      */
-    public function match($url)
-    {
-        foreach ($this->routes as $route => $params) {
+    // public function match($url)
+    // {
+    //     foreach ($this->routes as $route => $params) {
+    //         if (preg_match($route, $url, $matches)) {
+    //             // Get named capture group values
+    //             foreach ($matches as $key => $match) {
+    //                 if (is_string($key)) {
+    //                     $params[$key] = $match;
+    //                 }
+    //             }
+
+    //             $this->params = $params;
+    //             return true;
+    //         }
+    //     }
+
+    //     return false;
+    // }
+    public function ma9($url){
+        foreach ($this->routes as $route => $params){
             if (preg_match($route, $url, $matches)) {
                 // Get named capture group values
                 foreach ($matches as $key => $match) {
@@ -83,7 +100,6 @@ class Router
 
         return false;
     }
-
     /**
      * Get the currently matched parameters
      *
@@ -106,7 +122,7 @@ class Router
     {
         $url = $this->removeQueryStringVariables($url);
 
-        if ($this->match($url)) {
+        if ($this->ma9($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
             $controller = $this->getNamespace() . $controller;
