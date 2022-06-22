@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use \Core\View;
-use App\Models\Products;
+use App\Models\User;
 
 
 /**
@@ -11,7 +11,7 @@ use App\Models\Products;
  *
  * PHP version 7.0
  */
-class Home extends \Core\Controller
+class Shopping_Cart extends \Core\Controller
 {
 
     /**
@@ -21,8 +21,6 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('Home/index.html',[
-            'products' =>Products::getAll()
-        ]);
+        View::renderTemplate('Pages/Shopping_Cart/index.html');
     }
 }

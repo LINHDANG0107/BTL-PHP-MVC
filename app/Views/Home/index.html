@@ -24,7 +24,7 @@
                                         Welcome to
                                     </h1>
                                     <h2>
-                                        Glasses shop
+                                        Tôi Bán Kính
                                     </h2>
                                     <div class="btn-box">
                                         <a href="" class="btn-1">
@@ -89,7 +89,7 @@
                     <p>
                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
                     </p>
-                    <a href="">
+                    <a href="/about">
             Read More
           </a>
                 </div>
@@ -116,113 +116,32 @@
             </h2>
         </div>
         <div class="glass_container">
+            {% for i in products|slice(0, 8) %}
             <div class="box">
                 <div class="img-box">
                     <img src="images/g-1.png" alt="">
                 </div>
                 <div class="price">
+
                     <h6>
-                        $50
+                        <h6>
+                            <a href="/Detail/products/{{i.product_id}}"><b> {{i.product_name}}</b></a>
+
+                        </h6>
+
                     </h6>
-                    <a href="">
-            Buy Now
+                    <h6>
+                        Giá: {{i.price}} vnđ
+                    </h6>
+                    <a href="/Catalog/products">
+            Thêm vào giỏ hàng
           </a>
                 </div>
             </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-2.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-3.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-4.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-5.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-6.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-7.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/g-8.png" alt="">
-                </div>
-                <div class="price">
-                    <h6>
-                        $50
-                    </h6>
-                    <a href="">
-            Buy Now
-          </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="btn-box">
-            <a href="">
+            <a href="/Catalog/products">
         See More
       </a>
         </div>

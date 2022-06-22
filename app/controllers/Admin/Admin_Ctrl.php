@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use \Core\View;
-use App\Models\Products;
+use App\Models\Login_Model;
 
 
 /**
@@ -11,7 +11,7 @@ use App\Models\Products;
  *
  * PHP version 7.0
  */
-class Home extends \Core\Controller
+class Admin_Ctrl extends \Core\Controller
 {
 
     /**
@@ -21,8 +21,7 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('Home/index.html',[
-            'products' =>Products::getAll()
+        View::renderTemplate('Admin/Pages/index.html',[
         ]);
     }
 }

@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block body %}
+<!-- <form action="/Login/create" method="post"> -->
+
+<div class="body_login">
+    <div class="container_login" id="container_login">
+        <div class="form-container sign-up-container">
+            <form method="post" action="/signup/create" id="formSignup">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fa fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" id="inputName" name="name" placeholder="Name " autofocus value="{{ user.name }}" />
+                <input type="email" id="inputEmail" name="email" value="{{ user.email }}" placeholder="Email" />
+                <input type="password" id="inputPassword" name="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
+        </div>
+
+
+
+
+        <div class="form-container sign-in-container">
+
+            <form action="/Login/create" method="post">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fa fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin-in"></i></a>
+                </div>
+                <input type="email" id="inputEmail" name="email" placeholder="Email" autofocus value="{{ email }}" />
+                <input type="password" id="inputPassword" name="password" placeholder="Password" />
+                <div class="checkbox">
+                    <label>
+                            <input type="checkbox" name="remember_me" {% if remember_me %} checked="checked"{% endif %} /> Remember me
+                        </label>
+                </div>
+
+                <button type="submit">Sign In</button>
+                <a href="/password/forgot">Forgot password?</a>
+            </form>
+
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container_login = document.getElementById('container_login');
+
+    signUpButton.addEventListener('click', () => {
+        container_login.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container_login.classList.remove("right-panel-active");
+    });
+</script>
+<!-- </form> -->
+
+{% endblock %}
