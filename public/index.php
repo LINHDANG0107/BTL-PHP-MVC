@@ -38,6 +38,8 @@ $router->add('signup/activate/{token:[\da-f]+}', ['controller' => 'SignUp', 'act
 
 $router->add('admin/login', ['controller' => 'Admin\Login', 'action' => 'new']);
 $router->add('admin/create', ['controller' => 'Admin\Login', 'action' => 'create']);
+$router->add('admin_master', ['controller' => 'Admin\Admin_Ctrl', 'action' => 'index']);
+$router->add('admin/list_products', ['controller' => 'Admin\List_Product', 'action' => 'products']);
 
 
 $router->add('{controller}/{action}');

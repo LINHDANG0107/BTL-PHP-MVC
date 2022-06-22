@@ -37,6 +37,7 @@ class Auth
         }
     }
 
+
     /**
      * Logout the user
      *
@@ -77,6 +78,10 @@ class Auth
     {
         $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
     }
+    public static function getRequestedPageAdmin()
+    {
+        $_SESSION['return_to_to'] = $_SERVER['REQUEST_URI'];
+    }
 
     /**
      * Get the originally-requested page to return to after requiring login, or default to the homepage
@@ -89,7 +94,7 @@ class Auth
     }
     public static function getReturnToPageAdmin()
     {
-        return $_SESSION['return_to'] ?? '/Admin_master';
+        return $_SESSION['return_to_to'] ?? '/admin_master';
     }
 
     /**

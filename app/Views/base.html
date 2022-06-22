@@ -68,18 +68,9 @@
                         </div>
                         <div class="quote_btn-container ">
                             <a href="/Login">
+                            Login
 
-                                {% if users %}
-                                    <ul>
-                                    {% for user in users %}
-                                        <li>{{ user.username|e }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% else %}
-                                    Log in
-                                    {% endif %}
-
-              </a>
+                            </a>
                             <a href="/Shopping_Cart">
                                 <img src="/images/cart.png" alt="">
                             </a>

@@ -8,39 +8,32 @@ class Login_Model extends \Core\Model
 
 
 
-public $errors = [];
+// public $errors = [];
 
-public function __construct($data)
-{
-    foreach ($data as $key => $value) {
-        $this->$key = $value;
-    }
-}
+// public function __construct($data)
+// {
+//     foreach ($data as $key => $value) {
+//         $this->$key = $value;
+//     }
+// }
 
 
 
 public function validate()
 {
 
-    if (filter_var($this->admin_email,FILTER_VALIDATE_EMAIL) === false) {
-        $this->errors[] = 'Invalid email';
-    }
-
-    if ($this->emailExists($this->admin_email)) {
-        $this->errors[] = "Email is already taken";
-    }
-
-
-
-    if (strlen($this->admin_password) < 6) {
+if ($this->admin_name == '') {
+    $this->errors[] = 'Name is required';
+}
+    if (strlen($this->password) < 6) {
         $this->errors[] = "Please enter at least 6 characters for password";
     }
 
-    if (preg_match('/.*[a-z]+.*/i', $this->admin_password) == 0) {
+    if (preg_match('/.*[a-z]+.*/i', $this->password) == 0) {
         $this->errors[] = "Password needs at least one letter";
     }
 
-    if (preg_match('/.*\d+.*/i', $this->admin_password) == 0) {
+    if (preg_match('/.*\d+.*/i', $this->password) == 0) {
         $this->errors[] = "Password needs at least one number";
     }
 }
@@ -53,12 +46,12 @@ public function validate()
      *
      * @return boolean  True if a record already exists with the specified email, false otherwise
      */
-    public static function emailExists($email, $ignore_id = null)
+    public static function nameExists($admin_name, $ignore_id = null)
     {
-        $user = static::findByEmail($email);
+        $user = static::findByName($admin_name);
 
         if ($user) {
-            if ($user->id != $ignore_id) {
+            if ($user->admin_id != $ignore_id) {
                 return true;
             }
         }
@@ -73,15 +66,14 @@ public function validate()
      *
      * @return mixed User object if found, false otherwise
      */
-    public static function findByEmail($admin_email)
+    public static function findByName($admin_name)
     {
-        $sql = 'SELECT * FROM tbl_admin  WHERE admin_email= :admin_email' ;
+        $sql = 'SELECT * FROM tbl_admin  WHERE admin_name= :admin_name ' ;
         $db = static::getDB();
         $stmt = $db->prepare($sql);
-        $stmt->bindValue(':admin_email', $admin_email, PDO::PARAM_STR_CHAR);
+        $stmt->bindValue(':admin_name', $admin_name, PDO::PARAM_STR_CHAR);
         $stmt->setFetchMode(PDO::FETCH_CLASS, get_called_class());
         $stmt->execute();
-
         return $stmt->fetch();
     }
 
@@ -94,10 +86,10 @@ public function validate()
      *
      * @return mixed  The user object or false if authentication fails
      */
-    public static function authenticate($email, $password)
+    public static function authenticate($admin_name, $password)
     {
-        $user = static::findByEmail($email);
-        if ($user && $user->is_active) {
+        $user = static::findByName($admin_name);
+        if ($user) {
 
             if ($password === $user->admin_password) {
 
